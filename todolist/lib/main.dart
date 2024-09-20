@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart'; // Import kIsWeb
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Import FontAwesome
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:todolist/Screen/signin_Screen.dart'; // Import FontAwesome
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +11,7 @@ void main() async {
   if (kIsWeb) {
     // Initialize Firebase for Web
     await Firebase.initializeApp(
+      // ignore: prefer_const_constructors
       options: FirebaseOptions(
         apiKey: "AIzaSyDslInM7R2OWBFjnRxHxC2kh53vC4V4Vwo",
         authDomain: "todolist-73765.firebaseapp.com",
@@ -25,7 +27,7 @@ void main() async {
     await Firebase.initializeApp();
   }
 
-  runApp(MyApp());
+  runApp(SigninScreen());
 }
 
 class MyApp extends StatefulWidget {
